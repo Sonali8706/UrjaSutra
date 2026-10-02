@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-charcoal font-sans antialiased;
+    background:
+      radial-gradient(circle at 8% 8%, rgba(255, 107, 0, 0.12), transparent 24rem),
+      radial-gradient(circle at 92% 18%, rgba(13, 124, 133, 0.13), transparent 26rem),
+      radial-gradient(circle at 70% 88%, rgba(0, 168, 89, 0.09), transparent 28rem),
+      #F5F0EB;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-sand-200;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sand-400 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-sand-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 border border-sand-300/60 backdrop-blur-md rounded-2xl shadow-glass transition-all duration-300;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68));
+  }
+  .glass-card:hover {
+    @apply shadow-glass-hover;
+  }
+
+  .glass-panel {
+    @apply bg-white/65 border border-sand-300/50 backdrop-blur-sm rounded-xl;
+    background-image: linear-gradient(135deg, rgba(13, 124, 133, 0.06), rgba(255, 255, 255, 0.52));
+  }
+
+  .btn-primary {
+    @apply bg-teal text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 hover:bg-teal-dark hover:scale-[1.02] active:scale-[0.98] shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-white/80 text-charcoal font-medium px-5 py-2.5 rounded-xl border border-sand-300 transition-all duration-200 hover:bg-white hover:shadow-md hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-flare {
+    @apply bg-flare text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] shadow-sm;
+  }
+
+  .input-field {
+    @apply w-full bg-white/80 border border-sand-300 rounded-xl px-4 py-2.5 text-charcoal placeholder:text-charcoal-muted/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal;
+  }
+
+  .tab-button {
+    @apply px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300;
+  }
+  .tab-button-active {
+    @apply bg-teal text-white shadow-sm;
+    box-shadow: 0 6px 18px rgba(13, 124, 133, 0.24);
+  }
+  .tab-button-inactive {
+    @apply text-charcoal-muted hover:bg-white hover:text-teal;
+  }
+
+  .dashboard-shell {
+    background:
+      radial-gradient(circle at 4% 28%, rgba(255, 107, 0, 0.08), transparent 22rem),
+      radial-gradient(circle at 98% 54%, rgba(13, 124, 133, 0.1), transparent 24rem),
+      linear-gradient(135deg, #F5F0EB 0%, #F8F4EF 46%, #EEF4F0 100%);
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .tilt-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+  }
+  .tilt-card:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(-1deg) translateY(-2px);
+  }
+
+  .colorful-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #0D7C85 0%, #00A859 34%, #FFC72C 67%, #FF6B00 100%);
+    border-radius: 999px;
+  }
+}
+/* Professional colour system — visual styling only */
+:root {
+  --ui-blue: #1d4ed8;
+  --ui-indigo: #4338ca;
+  --ui-violet: #7c3aed;
+  --ui-yellow: #facc15;
+  --ui-orange: #c2410c;
+  --ui-green: #15803d;
+  --ui-red: #b91c1c;
+}
+
+/* Cool neutral canvas instead of beige */
+body,
+.dashboard-shell {
+  background: #f3f6fb;
+}
+
+/* Solid surfaces instead of translucent gradient cards */
+.glass-card {
+  background-color: #ffffff;
+  background-image: none;
+  box-shadow: 0 6px 20px rgba(30, 41, 59, 0.06);
+}
+
+.glass-card:hover {
+  box-shadow: 0 10px 28px rgba(30, 41, 59, 0.1);
+}
+
+.glass-panel {
+  background-image: none;
+}
+
+/* Header and navigation */
+.ui-header {
+  background-color: #eaf1ff;
+  border-bottom-color: #c7d8fb;
+  box-shadow: 0 3px 14px rgba(29, 78, 216, 0.08);
+}
+
+.ui-navigation {
+  background-color: #ffffff;
+  border-bottom-color: #dbe3ef;
+}
+
+.tab-button-active {
+  background-color: var(--ui-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.tab-button-inactive {
+  color: #475569;
+}
+
+.tab-button-inactive:hover {
+  background-color: #eaf1ff;
+  color: var(--ui-blue);
+}
+
+/* Primary actions */
+.btn-primary {
+  background-color: var(--ui-blue);
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.btn-secondary:hover {
+  background-color: #f1f5f9;
+}
+
+.btn-flare {
+  background-color: var(--ui-orange);
+}
+
+/* Form fields */
+.input-field {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.input-field:focus {
+  border-color: var(--ui-blue);
+  --tw-ring-color: rgba(29, 78, 216, 0.25);
+}
+
+/* Section surfaces: one deliberate colour per section */
+.ui-map {
+  background-color: #f0f6ff;
+  border-color: #c7d8fb;
+}
+
+.ui-benchmark {
+  background-color: #f0f1ff;
+  border-color: #c7cdfb;
+}
+
+.ui-calculator {
+  background-color: #f7f2ff;
+  border-color: #ddd0fa;
+}
+
+.ui-batch {
+  background-color: #fffbeb;
+  border-color: #f1dfa0;
+}
+
+.ui-verification {
+  background-color: #effaf3;
+  border-color: #bee4cb;
+}
+
+/* Section titles */
+.ui-map h2 {
+  color: var(--ui-blue);
+}
+
+.ui-benchmark h2 {
+  color: var(--ui-indigo);
+}
+
+.ui-calculator h2 {
+  color: var(--ui-violet);
+}
+
+.ui-batch h2 {
+  color: #854d0e;
+}
+
+.ui-verification h2 {
+  color: var(--ui-green);
+}
+
+/* Metric cards: colours follow the existing metric order */
+.ui-metrics > .glass-card:nth-child(1) {
+  background-color: #fff3e8;
+  border-color: #f2cfad;
+}
+
+.ui-metrics > .glass-card:nth-child(2) {
+  background-color: #eaf1ff;
+  border-color: #c7d8fb;
+}
+
+.ui-metrics > .glass-card:nth-child(3) {
+  background-color: #edf9f0;
+  border-color: #bee4cb;
+}
+
+.ui-metrics > .glass-card:nth-child(4) {
+  background-color: #fff9df;
+  border-color: #efdda0;
+}
+
+.ui-metrics > .glass-card:nth-child(5) {
+  background-color: #fff0f0;
+  border-color: #efc4c4;
+}
+
+/* Solid icon tiles within metric cards */
+.ui-metrics > .glass-card:nth-child(1) > div:first-child {
+  background-color: var(--ui-orange);
+}
+
+.ui-metrics > .glass-card:nth-child(2) > div:first-child {
+  background-color: var(--ui-blue);
+}
+
+.ui-metrics > .glass-card:nth-child(3) > div:first-child {
+  background-color: var(--ui-green);
+}
+
+.ui-metrics > .glass-card:nth-child(4) > div:first-child {
+  background-color: var(--ui-yellow);
+}
+
+.ui-metrics > .glass-card:nth-child(5) > div:first-child {
+  background-color: var(--ui-red);
+}
+
+/* Preserve existing conditional icon colours */
+.ui-metrics > .glass-card > div:first-child svg {
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+/* Neutral footer */
+.dashboard-shell > footer {
+  background-color: #ffffff;
+  border-top-color: #dbe3ef;
+}
